@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ulangan Ceria Bahasa Inggris</title>
+<style>
+:root{--bg:#f3eeff;--ink:#2a1f4a;--card:#fff;--pri:#7b4bd6;--g:#2fae5a;--y:#ffc93c;--r:#ef5b5b;--o:#16807f;color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1530;--ink:#f1ecff;--card:#2b2147}}
+:root[data-theme="dark"]{--bg:#1c1530;--ink:#f1ecff;--card:#2b2147;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Trebuchet MS","Comic Sans MS",system-ui,sans-serif;min-height:100vh;user-select:none;-webkit-user-select:none}
+.screen{display:none;max-width:700px;margin:0 auto;padding:16px}.screen.on{display:block}
+h1{text-align:center;font-size:clamp(25px,6.5vw,38px);margin:8px 0}
+.sub{text-align:center;margin:0 0 14px;opacity:.85}
+.emo{text-align:center;font-size:72px;line-height:1}
+.card{background:var(--card);border-radius:22px;padding:16px;margin-bottom:12px;box-shadow:0 4px 0 #0002}
+.card h3{margin:0 0 10px}
+input{width:100%;font:inherit;font-size:22px;padding:14px;border-radius:16px;border:3px solid var(--pri);background:var(--bg);color:var(--ink);text-align:center}
+.btn{display:block;width:100%;font:inherit;font-size:22px;font-weight:bold;padding:14px;border:0;border-radius:18px;background:var(--y);color:#2b2b2b;cursor:pointer;box-shadow:0 5px 0 #b8941a;margin-top:12px}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #b8941a}
+.btn.alt{background:var(--card);color:var(--ink);border:3px solid var(--ink);box-shadow:0 4px 0 #0003}
+.home{display:inline-block;text-decoration:none;font-weight:bold;font-size:15px;padding:8px 14px;border-radius:999px;background:var(--card);color:var(--ink);border:3px solid var(--ink)}
+.center{text-align:center;margin-bottom:8px}
+.greet{background:var(--pri);color:#fff;border-radius:22px;padding:14px;text-align:center;font-size:clamp(20px,5vw,28px);font-weight:bold;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.chip{font:inherit;font-size:18px;font-weight:bold;padding:14px 6px;border-radius:16px;border:3px solid transparent;background:var(--bg);color:var(--ink);cursor:pointer}
+.chip small{display:block;font-size:12px;font-weight:normal;opacity:.8}
+.chip.sel{border-color:var(--y);background:#ffc93c33}
+.babs{display:grid;gap:8px}
+.bab{font:inherit;font-size:17px;text-align:left;padding:12px 14px;border-radius:14px;border:3px solid var(--pri);background:var(--bg);color:var(--ink);cursor:pointer}
+.bab.all{background:var(--pri);color:#fff}
+.top{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:10px;font-weight:bold}
+.sec{font:inherit;font-size:14px;padding:6px 12px;border-radius:14px;border:3px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.bar{height:12px;border-radius:8px;background:#0002;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;width:0;background:var(--pri);transition:width .3s}
+.qt{font-size:clamp(19px,4.8vw,26px);font-weight:bold;text-align:center;margin:8px 0 14px;line-height:1.4}
+.opts{display:grid;gap:10px}
+.opt{font:inherit;font-size:clamp(17px,4.4vw,22px);font-weight:bold;padding:16px;border-radius:18px;border:0;background:var(--o);color:#fff;cursor:pointer;box-shadow:0 5px 0 #0e5857;touch-action:manipulation}
+.opt:active{transform:translateY(4px)}
+.opt.ok{background:var(--g);box-shadow:0 5px 0 #1d7a3c}
+.opt.no{background:var(--r);box-shadow:0 5px 0 #a83a3a;animation:sh .4s}
+.opt:disabled{cursor:default}
+@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.stars{font-size:46px;text-align:center;margin:6px 0}
+.score{text-align:center;font-size:22px;font-weight:bold}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:18px;font-weight:bold;opacity:0;transition:.25s;pointer-events:none;z-index:9;max-width:90vw;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+</style></head><body>
+
+<section id="s-start" class="screen on">
+  <div class="center"><a class="home" href="https://gtkkotim2026-alt.github.io/Game-Ceria-Hadvhy/">🏠 Kembali ke Menu Utama</a></div>
+  <div class="emo">🌍</div>
+  <h1>Ulangan Ceria Bahasa Inggris</h1>
+  <p class="sub">English Quiz • Listening, Reading, Speaking, Writing<br>Kelas 1 sampai 6</p>
+  <div class="card"><h3>Siapa namamu? (What is your name?)</h3>
+    <input id="nm" maxlength="20" placeholder="Tulis namamu di sini..." autocomplete="off">
+    <button class="btn" id="go">Masuk ▶</button></div>
+</section>
+
+<section id="s-menu" class="screen">
+  <div class="center"><a class="home" href="https://gtkkotim2026-alt.github.io/Game-Ceria-Hadvhy/">🏠 Kembali ke Menu Utama</a></div>
+  <div class="greet" id="greet"></div>
+  <div class="card"><h3>1. Pilih kelas</h3><div class="grid" id="kelas"></div></div>
+  <div class="card" id="babcard" style="display:none"><h3>2. Pilih BAB ulangan</h3><div class="babs" id="babs"></div></div>
+  <button class="btn alt" id="chg">✏️ Ganti Nama</button>
+</section>
+
+<section id="s-quiz" class="screen">
+  <div class="top"><button class="sec" id="qb">⬅ Pilih BAB</button><span id="qh"></span><button class="sec" id="snd">🔊</button></div>
+  <div class="bar"><i id="pg"></i></div>
+  <div class="score" id="sc"></div>
+  <div class="qt" id="qt"></div>
+  <div style="text-align:center;margin-bottom:10px"><button class="sec" id="rd">🔈 Listen to the question</button></div>
+  <div class="opts" id="op"></div>
+</section>
+
+<section id="s-res" class="screen">
+  <div class="card">
+    <div class="emo">🏆</div><h1 id="rh"></h1>
+    <div class="stars" id="rs"></div><div class="score" id="rt"></div>
+    <p class="sub" id="rm"></p>
+    <button class="btn" id="again">🔁 Ulangi</button>
+    <button class="btn alt" id="other">📚 Pilih BAB Lain</button>
+    <div class="center" style="margin-top:14px"><a class="home" href="https://gtkkotim2026-alt.github.io/Game-Ceria-Hadvhy/">🏠 Kembali ke Menu Utama</a></div>
+  </div>
+</section>
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   BANK SOAL — EDIT DI SINI untuk menyesuaikan dengan buku/modul Anda.
+   Format tiap soal: ["pertanyaan","jawaban BENAR","salah 1","salah 2"]
+   Jawaban benar SELALU ditulis di urutan pertama (diacak otomatis saat main).
+   Teks di dalam tanda kurung ( ) pada pertanyaan = terjemahan/petunjuk bahasa
+   Indonesia; tampil di layar tetapi TIDAK dibacakan suara.
+   Tiap kelas berisi daftar BAB: ["Judul BAB", [soal, soal, ...]]
+   Fase: A = kelas 1-2, B = kelas 3-4, C = kelas 5-6.
+   ============================================================ */
+const FASE={1:'A',2:'A',3:'B',4:'B',5:'C',6:'C'};
+const BANK={
+1:[
+ ["Greetings and Introductions",[
+  ["In the morning we say ... (Pagi hari kita mengucapkan ...)","Good morning","Good night","Good bye"],
+  ["My name ... Budi. (Namaku Budi.)","is","are","am"],
+  ["When we meet someone, we say ... (Saat bertemu orang)","Hello","Good night","Sorry"],
+  ["Someone says \"Thank you.\" We answer ... (Kita menjawab)","You're welcome.","Good night.","I'm sorry."]]],
+ ["Colors and Numbers",[
+  ["What color is the sky? (Apa warna langit?)","blue","red","black"],
+  ["What is this? 🍌 It is ... (Pisang berwarna ...)","yellow","purple","pink"],
+  ["Number 3 is ... (Angka 3 dalam bahasa Inggris)","three","two","five"],
+  ["\"Ten\" is number ... (Ten adalah angka ...)","10","1","7"]]],
+ ["Animals and Family",[
+  ["What is this? 🐱","cat","dog","cow"],
+  ["A fish lives in the ... (Ikan hidup di ...)","water","tree","sky"],
+  ["My mother's husband is my ... (Suami ibuku adalah ...)","father","brother","teacher"],
+  ["Mother and father are my ... (Ibu dan ayah adalah ...)","parents","friends","teachers"]]]],
+2:[
+ ["Classroom Objects",[
+  ["You write with a ... (Kita menulis dengan ...)","pencil","spoon","shoe"],
+  ["You read a ... (Kita membaca ...)","book","ball","chair"],
+  ["The teacher writes on the ... (Guru menulis di ...)","board","bag","door"],
+  ["I put my books in my ... (Aku menaruh buku di ...)","bag","pencil","window"]]],
+ ["Body Parts and Senses",[
+  ["We see with our ... (Kita melihat dengan ...)","eyes","ears","nose"],
+  ["We hear with our ... (Kita mendengar dengan ...)","ears","eyes","hands"],
+  ["We smell with our ... (Kita mencium dengan ...)","nose","mouth","feet"],
+  ["We walk with our ... (Kita berjalan dengan ...)","feet","hands","eyes"]]],
+ ["Fruits and Food",[
+  ["What is this? 🍌","banana","apple","grape"],
+  ["I drink ... when I am thirsty. (Aku minum ... saat haus.)","water","rice","bread"],
+  ["Which one is a vegetable? (Mana yang sayuran?)","carrot","apple","banana"],
+  ["I eat breakfast in the ... (Aku sarapan pada ...)","morning","night","afternoon"]]]],
+3:[
+ ["Days, Months, and Time",[
+  ["The day after Monday is ...","Tuesday","Sunday","Friday"],
+  ["How many days are there in a week?","seven","five","ten"],
+  ["The first month of the year is ...","January","March","December"],
+  ["Three o'clock is written as ...","3:00","12:30","6:15"]]],
+ ["Daily Activities",[
+  ["I ... my teeth every morning.","brush","drink","kick"],
+  ["She ... to school by bus.","goes","go","going"],
+  ["They ... football in the field.","play","plays","playing"],
+  ["Birds ... in the sky.","fly","flies","flying"]]],
+ ["Places and Directions",[
+  ["We learn at ... (Kita belajar di ...)","school","hospital","market"],
+  ["A doctor works in a ... (Dokter bekerja di ...)","hospital","school","library"],
+  ["We borrow books from the ... (Kita meminjam buku di ...)","library","bank","station"],
+  ["The opposite of \"right\" is ...","left","up","down"]]]],
+4:[
+ ["Describing People and Things",[
+  ["The opposite of \"big\" is ...","small","tall","long"],
+  ["An elephant is ... than a cat.","bigger","big","biggest"],
+  ["She has long black ...","hair","hand","foot"],
+  ["Ice is ...","cold","hot","sweet"]]],
+ ["Pronouns and \"To Be\"",[
+  ["This is Rina. ... mother is a nurse.","Her","His","My"],
+  ["I ... a student.","am","is","are"],
+  ["Tom and Budi ... friends.","are","is","am"],
+  ["This book is ... (Buku ini milikku.)","mine","me","I"]]],
+ ["Reading Short Texts",[
+  ["Sari has a cat. Its name is Momo. What is the cat's name?","Momo","Sari","Mimi"],
+  ["Today is Sunday. Dani visits his grandmother. When does Dani visit her?","On Sunday","On Monday","On Friday"],
+  ["I like apples. They are sweet and red. What do I like?","apples","bananas","grapes"],
+  ["Rina is reading a book at the library. Where is Rina?","In the library","At the market","In the kitchen"]]]],
+5:[
+ ["Simple Past Tense",[
+  ["Yesterday, I ... to the market.","went","go","will go"],
+  ["She ... a letter last night.","wrote","writes","write"],
+  ["We ... football last Sunday.","played","play","plays"],
+  ["The past form of \"eat\" is ...","ate","eated","eating"]]],
+ ["Future and Plans",[
+  ["Tomorrow, we ... visit our grandmother.","will","did","was"],
+  ["I am going to ... a cake tonight.","bake","baked","baking"],
+  ["\"Will it rain tomorrow?\" is a ...","question","statement","greeting"],
+  ["I will ... to Bali next holiday.","go","went","going"]]],
+ ["Reading and Writing",[
+  ["A sentence starts with a ... letter.","capital","small","wavy"],
+  ["A question ends with ...","a question mark (?)","a comma (,)","a period (.)"],
+  ["The main idea of a paragraph is its ...","most important point","last word","longest sentence"],
+  ["Budi gets up at 5. He takes a bath and has breakfast. Then he goes to school. What does Budi do first?","He gets up.","He goes to school.","He has breakfast."]]]],
+6:[
+ ["Comparison and Modals",[
+  ["Mount Everest is the ... mountain in the world.","highest","higher","high"],
+  ["My bag is ... than yours.","heavier","heavy","heaviest"],
+  ["You ... wear a helmet when riding a motorcycle.","must","may not","did"],
+  ["She can ... very well.","swim","swims","swimming"]]],
+ ["Procedure and Descriptive Text",[
+  ["A procedure text tells us how to ...","do or make something","describe a person","tell a funny story"],
+  ["First, boil the water. ..., put the noodles in. Which word fits?","Then","Because","But"],
+  ["A descriptive text describes ...","a person, place, or thing","steps to make food","a news event"],
+  ["The cat has soft white fur and green eyes. What color are its eyes?","green","white","black"]]],
+ ["Conversation and Everyday English",[
+  ["\"Can I borrow your pen?\" A polite answer is ...","Sure, here you are.","No way!","I don't know you."],
+  ["\"Excuse me, where is the post office?\" The answer is ...","It's next to the bank.","I like pizza.","I'm ten years old."],
+  ["\"How old are you?\" The answer is ...","I am eleven years old.","I am fine.","I am from Bali."],
+  ["To say sorry, we say ...","I'm sorry.","You're welcome.","Good night."]]]]
+};
+
+const $=id=>document.getElementById(id);
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+const show=id=>document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));
+let nama='Ananda',kelas=0,babSel=-2,list=[],qi=0,skor=0,lock=false,sound=true;
+
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
+function speak(t,lang='en-US'){if(!sound||!('speechSynthesis' in window))return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=lang;u.pitch=1.3;u.rate=.95;speechSynthesis.speak(u)}catch(e){}}
+let ac;
+function tone(f,t0,d,type='sine',v=.18){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;o.connect(g);g.connect(ac.destination);const s=ac.currentTime+t0;g.gain.setValueAtTime(v,s);g.gain.exponentialRampToValueAtTime(.001,s+d);o.start(s);o.stop(s+d)}catch(e){}}
+function sBenar(){if(!sound)return;tone(659,0,.15,'triangle');tone(880,.12,.15,'triangle');tone(1175,.24,.25,'triangle')}
+function sSalah(){if(!sound)return;tone(220,0,.2,'sawtooth',.12);tone(150,.18,.35,'sawtooth',.12)}
+$('snd').onclick=()=>{sound=!sound;$('snd').textContent=sound?'🔊':'🔇';if(!sound&&'speechSynthesis' in window)speechSynthesis.cancel()};
+/* teks dibacakan: buang terjemahan Indonesia dalam ( ), ganti ... menjadi "blank" */
+const bacaan=t=>t.replace(/\s*\([^)]*\)/g,'').replace(/\.\.\./g,' blank ');
+
+function masuk(){
+  nama=$('nm').value.trim()||'Ananda';
+  $('greet').textContent=`Assalamu'alaikum, ${nama}! 👋`;
+  show('s-menu');renderKelas();
+  toast(`Assalamu'alaikum, ${nama}!`);
+  speak(`Assalamu'alaikum, ${nama}!`,'id-ID');
+}
+$('go').onclick=masuk;
+$('nm').addEventListener('keydown',e=>{if(e.key==='Enter')masuk()});
+$('chg').onclick=()=>{show('s-start');$('nm').focus()};
+
+function renderKelas(){
+  $('kelas').innerHTML=[1,2,3,4,5,6].map(k=>`<button class="chip ${k===kelas?'sel':''}" data-k="${k}">Kelas ${k}<small>Fase ${FASE[k]}</small></button>`).join('');
+  $('kelas').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{kelas=+b.dataset.k;renderKelas();renderBab()});
+}
+function renderBab(){
+  if(!kelas){$('babcard').style.display='none';return}
+  $('babcard').style.display='block';
+  const bs=BANK[kelas];
+  $('babs').innerHTML=bs.map((b,i)=>`<button class="bab" data-i="${i}">📖 BAB ${i+1}: ${b[0]} <small>(${b[1].length} soal)</small></button>`).join('')
+   +`<button class="bab all" data-i="-1">🌟 Ulangan Semua BAB (${bs.reduce((n,b)=>n+b[1].length,0)} soal)</button>`;
+  $('babs').querySelectorAll('.bab').forEach(b=>b.onclick=()=>mulai(+b.dataset.i));
+  $('babcard').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function mulai(i){
+  babSel=i;const bs=BANK[kelas];
+  const src=i<0?bs.flatMap(b=>b[1]):bs[i][1];
+  list=shuf(src).map(s=>({q:s[0],a:s[1],o:shuf(s.slice(1))}));
+  qi=0;skor=0;
+  $('qh').textContent=`Kelas ${kelas} • ${i<0?'Semua BAB':'BAB '+(i+1)}`;
+  show('s-quiz');tampil();
+}
+function tampil(){
+  lock=false;const q=list[qi];
+  $('pg').style.width=(qi/list.length*100)+'%';
+  $('sc').textContent=`Soal ${qi+1} dari ${list.length}  •  ⭐ ${skor}`;
+  $('qt').textContent=q.q;
+  $('op').innerHTML=q.o.map(o=>`<button class="opt">${o}</button>`).join('');
+  $('op').querySelectorAll('.opt').forEach(b=>b.onclick=()=>jawab(b,q));
+  speak(bacaan(q.q));
+}
+function jawab(btn,q){
+  if(lock)return;lock=true;
+  const ok=btn.textContent===q.a;
+  $('op').querySelectorAll('.opt').forEach(b=>{b.disabled=true;if(b.textContent===q.a)b.classList.add('ok')});
+  let msg;
+  if(ok){skor++;sBenar();msg=`Correct, ${nama}! Great job!`;toast('✅ Correct! Benar!')}
+  else{btn.classList.add('no');sSalah();msg=`Try again, ${nama}. The answer is ${bacaan(q.a)}`;toast('❌ The answer is: '+q.a)}
+  $('sc').textContent=`Soal ${qi+1} dari ${list.length}  •  ⭐ ${skor}`;
+  setTimeout(()=>speak(msg),ok?350:450);
+  setTimeout(()=>{qi++;qi<list.length?tampil():selesai()},ok?2200:3600);
+}
+function selesai(){
+  const n=list.length,p=skor/n;
+  const bintang=p>=.8?'⭐⭐⭐':p>=.5?'⭐⭐':'⭐';
+  const pesan=p>=.8?'Excellent! You are so smart!':p>=.5?'Good job! Study a little more!':'Do not give up. Let us try again!';
+  $('rh').textContent=`Selesai, ${nama}!`;
+  $('rs').textContent=bintang;
+  $('rt').textContent=`Nilai: ${skor} dari ${n} soal`;
+  $('rm').textContent=pesan;
+  show('s-res');sBenar();
+  setTimeout(()=>speak(`You are finished, ${nama}. Your score is ${skor} out of ${n}. ${pesan}`),500);
+}
+$('rd').onclick=()=>speak(bacaan(list[qi].q));
+$('again').onclick=()=>mulai(babSel);
+$('other').onclick=()=>{show('s-menu');renderKelas();renderBab()};
+$('qb').onclick=()=>{if('speechSynthesis' in window)speechSynthesis.cancel();show('s-menu');renderKelas();renderBab()};
+</script>
+</body></html>
